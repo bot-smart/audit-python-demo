@@ -26,13 +26,12 @@ def sign(param):
 
     return hashlib.sha1(('&'.join(list_param) + APP_KEY).encode(encoding='utf-8')).hexdigest()
 
-def sed(business_id, content):
+def sed(business_id, task_id):
     param = {
         'app_id': APP_ID,
         'business_id': business_id,
         'timestamp': str(int(time.time() * 1000)),
-        'unique_id': str(uuid.uuid4()),
-        'data': content,
+        'taskIds': json.dumps([task_id]),
         'signature': ''
     }
     param['signature'] = sign(param)
@@ -40,7 +39,7 @@ def sed(business_id, content):
     response = requests.post(url=API_URL, data=param)
     print(response.text)
 
-content = '请输入您要审核的内容'
+task_id = 1274944876489449474
 
 
 
