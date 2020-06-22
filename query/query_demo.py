@@ -12,7 +12,7 @@ import threading
 运行前请修改 APP_ID,APP_KEY,BUSINESS_ID 为对应申请到的值
 """
 
-API_URL = 'https://api.botsmart.cn/v1/check/send'
+API_URL = 'https://api.botsmart.cn/v1/check/query'
 APP_ID = '请输入您的appId'
 APP_KEY = '请输入您的appKey'
 BUSINESS_ID = '请输入您的businesID'
